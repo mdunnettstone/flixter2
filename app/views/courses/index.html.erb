@@ -1,0 +1,23 @@
+<br />
+<div class = "booyah-box col-10 offset-1">
+  <h1>Available courses</h1>
+  <div class = "row">
+    <% @courses.each do |c| %>
+      <div class = "col-xs-12 col-md-6">
+        <div class = "card">
+          <div class = "card-block">
+            <h4 class = "card-title"><%= c.title %></h4>
+            <p class = "card-text"><%= c.description %></p>
+            <p class = "card-text text-muted">£<%= c.cost %></p>
+          </div>
+          <div class = "card-footer text-muted text-center">
+            <%= link_to course_path(c), class: 'btn btn-secondary col-10' do %>
+              <i class="fa fa-play" aria-hidden="true"></i> &nbspView course
+            <% end %>
+          </div>
+        </div>
+        <br />
+      </div>
+    <% end %>
+  </div>
+</div>

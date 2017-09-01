@@ -64,3 +64,5 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'figaro'
+
+gem 'font-awesome-rails'
