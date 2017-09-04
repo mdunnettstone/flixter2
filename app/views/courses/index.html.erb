@@ -5,10 +5,13 @@
     <% @courses.each do |c| %>
       <div class = "col-xs-12 col-md-6">
         <div class = "card">
+          <%= image_tag c.image, class: "card-img-top img-fluid" %>
           <div class = "card-block">
             <h4 class = "card-title"><%= c.title %></h4>
             <p class = "card-text"><%= c.description %></p>
-            <p class = "card-text text-muted">£<%= c.cost %></p>
+            <span class = "badge badge-default">
+              <%= number_to_currency(c.cost, unit: "£") %>
+            </span>
           </div>
           <div class = "card-footer text-muted text-center">
             <%= link_to course_path(c), class: 'btn btn-secondary col-10' do %>
